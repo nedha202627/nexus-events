@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS — College Club Events (Enchanted Edition)</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for futuristic, magical typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;500;600&family=Outfit:wght@500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Cosmic & Magical Background Elements -->
+    <div class="starfield">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+
+    <!-- Animated Magic Items: Floating Brooms & Glowing Owl Eyes -->
+    <div class="flying-broom broom-1">🧹</div>
+    <div class="flying-broom broom-2">🧹</div>
+
+    <div class="owl-eyes owl-left">
+        <div class="pupil"></div>
+        <div class="pupil"></div>
+    </div>
+    <div class="owl-eyes owl-right">
+        <div class="pupil"></div>
+        <div class="pupil"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#home" class="logo" data-target="home">⚡ NEX<span>US</span></a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active" data-target="home">Home</a>
+                <a href="#events" class="nav-link" data-target="events">Events</a>
+                <a href="#details" class="nav-link" data-target="details">Details</a>
+                <a href="#register" class="nav-link" data-target="register">Register</a>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- A. HOMEPAGE SECTION -->
+        <section id="home" class="hero-section active-section">
+            <div class="hero-content">
+                <div class="badge">🪄 SPELLBINDING CAMPUS HUB</div>
+                <h1>Your Campus. <span class="highlight">Our Magic.</span></h1>
+                <p>Unravel hackathons, grand musical galas, design sorcery, and esports showdowns across university houses. Step into a world where tech meets wizardry.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" id="exploreBtn" data-target="events">✨ Explore Spells & Events</button>
+                    <a href="#register" class="btn btn-secondary" data-target="register">📜 Quick Register</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="cosmic-orb"></div>
+                <div class="floating-badge">🔮 15+ Active Houses & Clubs</div>
+            </div>
+        </section>
+
+        <!-- B. EVENT CARDS / EVENTS LISTING SECTION -->
+        <section id="events" class="events-section">
+            <div class="section-header">
+                <h2>FEATURED <span class="highlight">SPELLBOUND EVENTS</span></h2>
+                <p>Filter through technical sorcery, cultural feasts, creative arts, and sports quests.</p>
+            </div>
+            
+            <!-- Search and Filters -->
+            <div class="controls-container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search spells, events, or clubs...">
+                </div>
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">All Houses</button>
+                    <button class="filter-btn" data-filter="Technical">Technical</button>
+                    <button class="filter-btn" data-filter="Cultural">Cultural</button>
+                    <button class="filter-btn" data-filter="Creative">Creative</button>
+                    <button class="filter-btn" data-filter="Sports">Sports</button>
+                </div>
+            </div>
+
+            <div class="events-grid" id="eventsGrid">
+                <!-- Dynamically injected via JavaScript -->
+            </div>
+        </section>
+
+        <!-- C. EVENT DETAILS SECTION / PAGE -->
+        <section id="details" class="details-section">
+            <div class="details-container">
+                <button class="back-btn" id="backToEvents">&larr; Back to Spells Scroll</button>
+                <div class="details-card" id="eventDetailsContent">
+                    <!-- Dynamically injected via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- D. REGISTRATION FORM SECTION -->
+        <section id="register" class="register-section">
+            <div class="register-container">
+                <div class="register-header">
+                    <h2>EVENT <span class="highlight">PARCHMENT REGISTRATION</span></h2>
+                    <p>Inscribe your name into the NEXUS scroll to claim your spot.</p>
+                </div>
+                <form id="registrationForm" class="cosmic-form" novalidate>
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" placeholder="Enter your wizard name" required>
+                        <span class="error-msg" id="nameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Campus Owl Email Address</label>
+                        <input type="email" id="email" placeholder="student@hogwarts.edu" required>
+                        <span class="error-msg" id="emailError"></span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="department">House / Department</label>
+                            <select id="department" required>
+                                <option value="">Select House / Department</option>
+                                <option value="Gryffindor CS">Computer Science & Engg</option>
+                                <option value="Ravenclaw ECE">Electronics & Communication</option>
+                                <option value="Slytherin Mech">Mechanical Engineering</option>
+                                <option value="Hufflepuff Arts">Architecture & Design</option>
+                                <option value="Business Management">Business Management</option>
+                            </select>
+                            <span class="error-msg" id="deptError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="year">Year of Magical Study</label>
+                            <select id="year" required>
+                                <option value="">Select Year</option>
+                                <option value="1st Year">1st Year (Novice)</option>
+                                <option value="2nd Year">2nd Year (Acolyte)</option>
+                                <option value="3rd Year">3rd Year (Sorcerer)</option>
+                                <option value="4th Year">4th Year (Master)</option>
+                            </select>
+                            <span class="error-msg" id="yearError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="selectedEvent">Select Quest / Event</label>
+                        <select id="selectedEvent" required>
+                            <option value="">Choose a quest</option>
+                            <!-- Dynamically populated from script.js -->
+                        </select>
+                        <span class="error-msg" id="eventError"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">🪄 Cast Registration Spell</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cinematic Animated Magical Success Modal Overlay -->
+    <div id="successOverlay" class="success-overlay">
+        <div class="success-modal-card">
+            <div class="success-animation-wrapper">
+                <div class="glow-ring"></div>
+                <div class="check-icon">🪄</div>
+            </div>
+            <h3>Parchment Sealed!</h3>
+            <p id="successModalText">Your owl post has been dispatched for this quest.</p>
+            <button class="btn btn-primary btn-block" id="closeSuccessModal">Mischief Managed ✨</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 NEXUS — Campus Event Discovery. Powered by ancient magic and modern tech.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
