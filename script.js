@@ -30,7 +30,7 @@ const eventsData = [
         date: "Nov 22, 2026",
         time: "02:00 PM - 06:00 PM",
         venue: "Media Design Studio, Block C",
-        image: "https://images.unsplash.com/photo-1542744094-3a3124356b08?w=600&auto=format&fit=crop&q=80",
+        image: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=600&auto=format&fit=crop&q=80",
         description: "Push your creative sorcery. Rapid wireframing, 3D spatial prototyping, and magical interface design challenge based on a mystery prompt revealed live."
     },
     {
